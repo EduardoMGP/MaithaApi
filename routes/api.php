@@ -18,6 +18,7 @@ Route::group(['prefix' => 'auth', 'controller' => \App\Http\Controllers\AuthCont
     Route::post('login', 'login')->name('api.login');
     Route::post('register', 'register')->name('api.register');
     Route::group(['middleware' => 'auth:sanctum'], function () {
+        Route::post('me', 'validateToken')->name('api.validateToken');
         Route::post('logout', 'logout')->name('api.logout');
         Route::post('logout-all', 'logoutAll')->name('api.logout.all');
     });

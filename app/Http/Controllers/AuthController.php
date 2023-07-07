@@ -60,4 +60,13 @@ class AuthController extends Controller
         $user->tokens()->delete();
         return ApiResource::make(null, __('api.logout_success'), true, Response::HTTP_OK);
     }
+
+    public function validateToken()
+    {
+        /** @var User $user */
+        $user = Auth::user();
+        return ApiResource::make(UserResource::make($user),
+            __('api.token_valid'), true, Response::HTTP_OK
+        );
+    }
 }

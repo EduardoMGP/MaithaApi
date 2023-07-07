@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'token_valid' => 'Token válido.',
     'user' => [
         'not_found' => 'Usuário não encontrado.',
         'created' => 'Usuário criado com sucesso.',
