@@ -1,66 +1,49 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplicação de Gerenciamento de Usuários
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descrição
 
-## About Laravel
+Esta é uma aplicação simples desenvolvida utilizando Angular 16 e Laravel 10. O objetivo principal é permitir o gerenciamento de usuários em um sistema.    
+Visualize a aplicação Angular no repositório abaixo  
+https://github.com/EduardoMGP/MaithaApp
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Confira abaixo algumas informações importantes sobre o sistema.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Rotas da API
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Autenticação:
+  - `POST` https://maitha.api.uaibits.com.br/api/auth/login
+  - `POST` https://maitha.api.uaibits.com.br/api/auth/register
+  - `POST` https://maitha.api.uaibits.com.br/api/auth/logout
+  - `POST` https://maitha.api.uaibits.com.br/api/auth/logout-all
 
-## Learning Laravel
+- Usuários:
+  - `GET` https://maitha.api.uaibits.com.br/api/users
+  - `POST` https://maitha.api.uaibits.com.br/api/users
+  - `GET` https://maitha.api.uaibits.com.br/api/users/{user}
+  - `PUT` https://maitha.api.uaibits.com.br/api/users/{user}
+  - `DELETE` https://maitha.api.uaibits.com.br/api/users/{user}
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Visualize a documentação completa da API no link abaixo  
+https://documenter.getpostman.com/view/8500239/2s93zGzyFt#4b37de47-297f-4ba9-bb7f-a679379bd0ad
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Metas do Sistema
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Back-End (API)
 
-## Laravel Sponsors
+Algumas metas para melhorar o sistema no lado do servidor incluem:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Aumentar a segurança implementando tokens mais elaborados e utilizando o "refresh_token" para renovar as sessões, proporcionando maior proteção.
+- Adicionar níveis de permissões para restringir as operações apenas a usuários autorizados, garantindo a segurança e controle adequados.
+- Introduzir novas funcionalidades, como permitir que os usuários gerenciem os dispositivos conectados às suas contas, aumentando a flexibilidade e controle do sistema.
 
-### Premium Partners
+### Aplicação Web
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Algumas melhorias planejadas para a aplicação web incluem:
 
-## Contributing
+- Aprimorar o layout, tornando-o mais fluido e funcional para os usuários, proporcionando uma experiência agradável.
+- Resolver problemas de responsividade em dispositivos móveis, garantindo que a aplicação seja utilizável em diferentes tamanhos de tela.
+- Melhorar a usabilidade ao cadastrar um novo usuário pelo painel, evitando atualizações completas da página e atualizando apenas os dados relevantes na tabela, tornando o processo mais eficiente e intuitivo.
+- Otimizar a folha de estilos do template, removendo estilos duplicados e melhorando o desempenho da aplicação.
+- Componentizar a aplicação de forma mais eficiente, reutilizando código e evitando a repetição desnecessária de lógica, o que facilitará a manutenção e expansão futuras.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
