@@ -2,22 +2,24 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @property bool $success
- * @property string $code
- * @property string $message
- * @property JsonResource $data
+ * @property int $code
+ * @property string|null $message
+ * @property JsonResource|null $data
  */
 class ApiResource extends JsonResource
 {
 
+    public static $wrap = null;
     private bool $success;
-    private string $code;
-    private string $message;
+    private int $code;
+    private string|null $message;
     private $data;
 
 
@@ -28,7 +30,9 @@ class ApiResource extends JsonResource
         $this->code = $code;
         $this->message = $message;
         $this->data = $data;
+        $this->response()->header('Content-Type', 'application/json');
     }
+
     /**
      * Transform the resource into an array.
      *
@@ -38,9 +42,14 @@ class ApiResource extends JsonResource
     {
         return [
             'success' => $this->success,
-            'code' => $this->code,
-            'message' => $this->message,
-            'data' => $this->data
+            'message' => $this->when($this->message != null, $this->message),
+            'data' => $this->when($this->data != null, $this->data)
         ];
+    }
+
+    public function withResponse(Request $request, JsonResponse $response): JsonResponse
+    {
+        $response->setStatusCode($this->code);
+        return $response;
     }
 }

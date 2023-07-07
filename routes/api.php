@@ -14,22 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'auth'], function () {
-
-    $AuthController = \App\Http\Controllers\AuthController::class;
-
-    Route::post('login', $AuthController . '@login')->name('login');
-    Route::post('register', $AuthController . '@register')->name('register');
-    Route::group(['middleware' => 'auth:api'], function() use ($AuthController) {
-        Route::get('logout', $AuthController . '@logout')->name('logout');
-        Route::get('user', $AuthController . '@user')->name('user');
+Route::group(['prefix' => 'auth', 'controller' => \App\Http\Controllers\AuthController::class], function () {
+    Route::post('login', 'login')->name('api.login');
+    Route::post('register', 'register')->name('api.register');
+    Route::group(['middleware' => 'auth:sanctum'], function () {
+        Route::post('logout', 'logout')->name('api.logout');
+        Route::post('logout-all', 'logoutAll')->name('api.logout.all');
+        Route::get('user', 'user')->name('api.user');
     });
 });
 
-Route::group([], function() {
-    Route::get('users', [\App\Http\Controllers\UserController::class, 'index']);
-    Route::get('users/{user}', 'UserController@show');
-    Route::post('users', 'UserController@store');
-    Route::put('users/{user}', 'UserController@update');
-    Route::delete('users/{user}', 'UserController@delete');
+Route::group(
+    [
+        'prefix' => 'users',
+        'controller' => \App\Http\Controllers\UserController::class,
+        'middleware' => 'auth:sanctum'
+    ], function () {
+    Route::get('/', 'index');
+    Route::post('/', 'create')->name('api.user.create');
+    Route::get('/{user}', 'show');
+    Route::put('/{user}', 'update')->name('api.user.update');
+    Route::delete('/{user}', 'delete');
 });
