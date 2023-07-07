@@ -20,7 +20,6 @@ Route::group(['prefix' => 'auth', 'controller' => \App\Http\Controllers\AuthCont
     Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::post('logout', 'logout')->name('api.logout');
         Route::post('logout-all', 'logoutAll')->name('api.logout.all');
-        Route::get('user', 'user')->name('api.user');
     });
 });
 
