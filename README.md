@@ -47,7 +47,6 @@ Algumas melhorias planejadas para a aplicação web incluem:
 
 - Aprimorar o layout, tornando-o mais fluido e funcional para os usuários, proporcionando uma experiência agradável.
 - Resolver problemas de responsividade em dispositivos móveis, garantindo que a aplicação seja utilizável em diferentes tamanhos de tela.
-- Melhorar a usabilidade ao cadastrar um novo usuário pelo painel, evitando atualizações completas da página e atualizando apenas os dados relevantes na tabela, tornando o processo mais eficiente e intuitivo.
 - Otimizar a folha de estilos do template, removendo estilos duplicados e melhorando o desempenho da aplicação.
 - Componentizar a aplicação de forma mais eficiente, reutilizando código e evitando a repetição desnecessária de lógica, o que facilitará a manutenção e expansão futuras.
 
