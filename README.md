@@ -2,9 +2,17 @@
 
 ## Descrição
 
-Esta é uma aplicação simples desenvolvida utilizando Angular 16 e Laravel 10. O objetivo principal é permitir o gerenciamento de usuários em um sistema.    
+Esta é uma aplicação simples desenvolvida utilizando Angular 16 e Laravel 10. O objetivo principal é permitir o gerenciamento de usuários em um sistema. 
+
+###  Links úteis
 Visualize a aplicação Angular no repositório abaixo  
-https://github.com/EduardoMGP/MaithaApp
+https://github.com/EduardoMGP/MaithaApp  
+
+Uma versão hospedada (demo) dessa aplicação está disponível em   
+https://maitha.uaibits.com.br
+
+Visualize a documentação completa da API no link abaixo  
+https://documenter.getpostman.com/view/8500239/2s93zGzyFt#4b37de47-297f-4ba9-bb7f-a679379bd0ad
 
 ### Confira abaixo algumas informações importantes sobre o sistema.
 
@@ -22,9 +30,6 @@ https://github.com/EduardoMGP/MaithaApp
   - `GET` https://maitha.api.uaibits.com.br/api/users/{user}
   - `PUT` https://maitha.api.uaibits.com.br/api/users/{user}
   - `DELETE` https://maitha.api.uaibits.com.br/api/users/{user}
-
-Visualize a documentação completa da API no link abaixo  
-https://documenter.getpostman.com/view/8500239/2s93zGzyFt#4b37de47-297f-4ba9-bb7f-a679379bd0ad
 
 ## Metas do Sistema
 
