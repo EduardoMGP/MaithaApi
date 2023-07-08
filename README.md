@@ -23,6 +23,7 @@ https://documenter.getpostman.com/view/8500239/2s93zGzyFt#4b37de47-297f-4ba9-bb7
   - `POST` https://maitha.api.uaibits.com.br/api/auth/register
   - `POST` https://maitha.api.uaibits.com.br/api/auth/logout
   - `POST` https://maitha.api.uaibits.com.br/api/auth/logout-all
+  - `POST` https://maitha.api.uaibits.com.br/api/auth/me
 
 - Usuários:
   - `GET` https://maitha.api.uaibits.com.br/api/users
